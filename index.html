@@ -1,26 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Slate by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+-->
+<html>
+	<head>
+		<title>The Property Mentors - Meeting Room Display</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-<head>
-  <title>JavaScript Microsoft Graph SPA</title>
-  <link rel="icon" href="data:;base64,="> <!-- Suppress favicon error -->
-</head>
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1>To book this space email <span id="email"></span></h1>
+				<nav><span id="txt"></span></nav>
+			</header>
 
-<body>
-  <main id="main-container" role="main" class="container">
-    <div id="content" style="display: none;">
-      <h4>Welcome <span id="userName"></span></h4>    
-    </div>
-    <a id="signin" onclick="displayUI(); return false;" href="#">
-      <img src="./images/ms-symbollockup_signin_light.png" alt="Sign in with Microsoft" />
-    </a>
-  </main>
-  <script src="https://alcdn.msauth.net/browser/2.1.0/js/msal-browser.min.js"
-    integrity="sha384-EmYPwkfj+VVmL1brMS1h6jUztl4QMS8Qq8xlZNgIT/luzg7MAzDVrRa2JxbNmk/e"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@microsoft/microsoft-graph-client/lib/graph-js-sdk.js"></script>
-  <script src="auth.js"></script>
-  <script src="graph.js"></script>
-  <script src="ui.js"></script>
-</body>
+		<!-- Banner -->
+			<section id="banner">
+				<article>
+					<img src="/images/slide03.jpg" alt="" />
+					<div class="inner">
+						<h2><span id="userName"></span></h2>
+						<ul class="actions fit">
+							<li><a class="button primary fit large disabled" id="avail">Available</a></li>
+						</ul>
+						<h3>Upcoming bookings</h3>
+						<div id="events" class="actions"></div>
+					</div>
+				</article>
+			</section>
+
+			<div class="footer">
+				<img src="/images/TPM-Logo_CMYK-White.svg">
+			</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.dropotron.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+			<script src="https://alcdn.msauth.net/browser/2.1.0/js/msal-browser.min.js"
+				integrity="sha384-EmYPwkfj+VVmL1brMS1h6jUztl4QMS8Qq8xlZNgIT/luzg7MAzDVrRa2JxbNmk/e"
+				crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/@microsoft/microsoft-graph-client/lib/graph-js-sdk.js"></script>
+			<script src="/assets/js/moment.js"></script>
+			<script src="/assets/js/auth.js"></script>
+			<script src="/assets/js/graph.js"></script>
+			<script src="/assets/js/ui.js"></script>
+
+	</body>
 </html>
