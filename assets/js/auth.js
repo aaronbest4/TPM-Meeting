@@ -4,7 +4,7 @@ const msalConfig = {
         clientId: '90631e24-039d-4157-acf6-a68e9ed2148a',
         // comment out if you use a multi-tenant AAD app
         authority: 'https://login.microsoftonline.com/e5475285-2655-4eb3-9009-6a91b31a0c81',
-        redirectUri: 'http://localhost:8080'
+        redirectUri: 'https://meetingroom.thepropertymentors.com.au/'
     }
 };
 const msalRequest = { scopes: [] };
@@ -18,8 +18,11 @@ const msalClient = new msal.PublicClientApplication(msalConfig);
 
 // Log the user in
 async function signIn() {
-    const authResult = await msalClient.loginPopup(msalRequest);
-    sessionStorage.setItem('msalAccount', authResult.account.username);
+    let account = sessionStorage.getItem('msalAccount');
+    if (!account) {
+        const authResult = await msalClient.loginPopup(msalRequest);
+        sessionStorage.setItem('msalAccount', authResult.account.username);
+    }
 }
 //Get token from Graph
 async function getToken() {

@@ -11,9 +11,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	</head>
 	<body class="is-preload">
 
+		<!-- Recording -->
+		<div id="recording" style="display:none;">
+			<h2 class="animate__animated animate__infinite animate__tada">Recording Currently<br />in Progress!</h2>
+			<p>Please be quiet when in this area.</p>
+			<div class="footer">
+				<img onclick="hardLoad()" src="/images/TPM-Logo_CMYK-White.svg">
+			</div>
+		</div>
+		
 		<!-- Header -->
 			<header id="header" class="alt">
 				<h1>To book this space invite <span id="email"></span> to your event</h1>
@@ -27,16 +40,22 @@
 					<div class="inner">
 						<h2><span id="userName"></span></h2>
 						<ul class="actions fit">
-							<li><a class="button primary fit large disabled" id="avail">Available</a></li>
+							<li><a class="button primary fit large" id="avail" onClick="newEvent()">Available | Book For Now</a></li>
 						</ul>
 						<h3>Upcoming bookings</h3>
-						<div id="events" class="actions"></div>
+						<p>
+							<div id="events" class="actions"></div>
+						</p>
+							<ul style="display:inline-block;">
+								<li id="booknow" class="button primary" onClick="newEvent()" style="display:none;" >Book For Now</li>
+								<li id="endbooking" class="button" onClick="endNow()" style="display:none;" >End Current Booking Now</li>
+							</ul>
 					</div>
 				</article>
 			</section>
 
 			<div class="footer">
-				<img src="/images/TPM-Logo_CMYK-White.svg">
+				<img onclick="hardLoad()" src="/images/TPM-Logo_CMYK-White.svg">
 			</div>
 
 		<!-- Scripts -->
@@ -52,6 +71,7 @@
 				crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/@microsoft/microsoft-graph-client/lib/graph-js-sdk.js"></script>
 			<script src="/assets/js/moment.js"></script>
+			<script src="/assets/js/moment-timezone-with-data-10-year-range.js"></script>
 			<script src="/assets/js/auth.js"></script>
 			<script src="/assets/js/graph.js"></script>
 			<script src="/assets/js/ui.js"></script>
